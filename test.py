@@ -5,7 +5,10 @@ from state_tracker import StateTracker
 import pickle, argparse, json
 from user import User
 from utils import remove_empty_slots
+from utils import reward_function, dict2sentence
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 if __name__ == "__main__":
     # Can provide constants file path in args OR run it as is and change 'CONSTANTS_FILE_PATH' below
@@ -17,7 +20,7 @@ if __name__ == "__main__":
     params = vars(args)
 
     # Load constants json into dict
-    CONSTANTS_FILE_PATH = 'constants.json'
+    CONSTANTS_FILE_PATH = 'constants_test.json'
     if len(params['constants_path']) > 0:
         constants_file = params['constants_path']
     else:
@@ -35,6 +38,7 @@ if __name__ == "__main__":
     # Load run constants
     run_dict = constants['run']
     USE_USERSIM = run_dict['usersim']
+    RENDER = run_dict['render']
     NUM_EP_TEST = run_dict['num_ep_run']
     MAX_ROUND_NUM = run_dict['max_round_num']
 
@@ -55,7 +59,7 @@ if __name__ == "__main__":
     if USE_USERSIM:
         user = UserSimulator(user_goals, constants, database)
     else:
-        user = User(constants)
+        user = User(user_goals, constants, database)
     emc = ErrorModelController(db_dict, constants)
     state_tracker = StateTracker(database, constants)
     dqn_agent = DQNAgent(state_tracker.get_state_size(), constants)
@@ -73,8 +77,15 @@ def test_run():
     print('Testing Started...')
     episode = 0
     while episode < NUM_EP_TEST:
-        episode_reset()
+        user_action = episode_reset()
         episode += 1
+        # Print the conversation if RENDER==TRUE
+        if RENDER:
+            print('\n**********Episode {} ********************'.format(episode))
+            print('User Goal: {}'.format(user.goal))
+            print(user.user_mood.current_mood)
+            print('-----------------------------------------------------------------------------------------------------------')
+            print('Initial User Utterance: {}'.format(dict2sentence(user_action, user.sentence_dict)))
         ep_reward = 0
         done = False
         # Get initial state from state tracker
@@ -85,16 +96,25 @@ def test_run():
             # Update state tracker with the agent's action
             state_tracker.update_state_agent(agent_action)
             # User takes action given agent action
+            #user_action, classified_action, done, outcome, success = user.step(agent_action)
+            #reward = reward_function(outcome, done, user, classified_action, constants['run']['reward_weight'], agent_action)
             user_action, reward, done, success = user.step(agent_action)
+            
             ep_reward += reward
             if not done:
                 # Infuse error into semantic frame level of user action
-                emc.infuse_error(user_action)
+                if USE_USERSIM:
+                    emc.infuse_error(user_action)
+            # Print the conversation if RENDER==TRUE
+            if RENDER:
+                user.render(agent_action, user_action)
             # Update state tracker with user action
             state_tracker.update_state_user(user_action)
             # Grab "next state" as state
             state = state_tracker.get_state(done)
         print('Episode: {} Success: {} Reward: {}'.format(episode, success, ep_reward))
+        #todo take this out
+        input("Waiting for user input:")
     print('...Testing Ended')
 
 
@@ -106,11 +126,14 @@ def episode_reset():
     # Then pick an init user action
     user_action = user.reset()
     # Infuse with error
-    emc.infuse_error(user_action)
+    if USE_USERSIM:
+        emc.infuse_error(user_action)
     # And update state tracker
     state_tracker.update_state_user(user_action)
     # Finally, reset agent
     dqn_agent.reset()
+
+    return user_action
 
 
 test_run()

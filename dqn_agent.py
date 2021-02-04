@@ -3,7 +3,9 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 import random, copy
 import numpy as np
+from tensorflow.python.ops.math_ops import to_double
 from dialogue_config import rule_requests, agent_actions
+from icm import ICM
 import re
 
 
@@ -46,7 +48,8 @@ class DQNAgent:
         self.state_size = state_size
         self.possible_actions = agent_actions
         self.num_actions = len(self.possible_actions)
-
+        self.C['action_size'] = self.num_actions
+        
         self.rule_request_set = rule_requests
 
         self.beh_model = self._build_model()
@@ -55,12 +58,14 @@ class DQNAgent:
         self._load_weights()
 
         self.reset()
+        self.icm = ICM(self.state_size, self.C)
 
     def _build_model(self):
         """Builds and returns model/graph of neural network."""
-
         model = Sequential()
         model.add(Dense(self.hidden_size, input_dim=self.state_size, activation='relu'))
+        model.add(Dense(self.hidden_size - 40, activation='relu'))
+        model.add(Dense(self.hidden_size - 60, activation='relu'))
         model.add(Dense(self.num_actions, activation='linear'))
         model.compile(loss='mse', optimizer=Adam(lr=self.lr))
         return model
@@ -89,7 +94,7 @@ class DQNAgent:
 
         """
 
-        if self.eps > random.random():
+        if self.eps > random.random() and not use_rule:
             index = random.randint(0, self.num_actions - 1)
             action = self._map_index_to_action(index)
             return index, action
@@ -114,12 +119,12 @@ class DQNAgent:
         if self.rule_current_slot_index < len(self.rule_request_set):
             slot = self.rule_request_set[self.rule_current_slot_index]
             self.rule_current_slot_index += 1
-            rule_response = {'intent': 'request', 'inform_slots': {}, 'request_slots': {slot: 'UNK'}}
+            rule_response = {'intent': 'utter_request', 'inform_slots': {}, 'request_slots': {slot: 'UNK'}}
         elif self.rule_phase == 'not done':
-            rule_response = {'intent': 'match_found', 'inform_slots': {}, 'request_slots': {}}
+            rule_response = {'intent': 'find_drink', 'inform_slots': {}, 'request_slots': {}}
             self.rule_phase = 'done'
         elif self.rule_phase == 'done':
-            rule_response = {'intent': 'done', 'inform_slots': {}, 'request_slots': {}}
+            rule_response = {'intent': 'utter_goodbye', 'inform_slots': {}, 'request_slots': {}}
         else:
             raise Exception('Should not have reached this clause')
 
@@ -244,7 +249,7 @@ class DQNAgent:
         """
 
         # Calc. num of batches to run
-        num_batches = len(self.memory) // self.batch_size
+        num_batches = np.min([len(self.memory) // self.batch_size, 100])
         for b in range(num_batches):
             batch = random.sample(self.memory, self.batch_size)
 
@@ -261,8 +266,15 @@ class DQNAgent:
 
             inputs = np.zeros((self.batch_size, self.state_size))
             targets = np.zeros((self.batch_size, self.num_actions))
+            states_batch = []
+            actions_batch = []
+            next_states_batch = []
 
             for i, (s, a, r, s_, d) in enumerate(batch):
+                states_batch.append(s)
+                actions_batch.append(a)
+                next_states_batch.append(s_)
+      
                 t = beh_state_preds[i]
                 if not self.vanilla:
                     t[a] = r + self.gamma * tar_next_state_preds[i][np.argmax(beh_next_states_preds[i])] * (not d)
@@ -273,6 +285,7 @@ class DQNAgent:
                 targets[i] = t
 
             self.beh_model.fit(inputs, targets, epochs=1, verbose=0)
+            self.icm.train(np.asarray(states_batch), np.asarray(actions_batch), np.asarray(next_states_batch)) 
 
     def copy(self):
         """Copies the behavior model's weights into the target model's weights."""

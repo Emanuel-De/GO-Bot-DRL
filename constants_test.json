@@ -1,0 +1,38 @@
+{
+  "db_file_paths": {
+    "database": "data/drinks_db.pkl",
+    "dict": "data/drinks_dict.pkl",
+    "user_goals": "data/drinks_user_goals.pkl"
+  },
+  "run": {
+    "usersim": false,
+    "render": true,
+    "warmup_mem": 1000,
+    "num_ep_run": 200,
+    "train_freq": 20,
+    "max_round_num": 30,
+    "reward_weight": 0.6,
+    "success_rate_threshold": 0.3
+  },
+  "agent": {
+    "save_weights_file_path": "",
+    "load_weights_file_path": "weights/model_2101.h5",
+    "vanilla": true,
+    "learning_rate": 1e-3,
+    "batch_size": 64,
+    "dqn_hidden_size": 140,
+    "epsilon_init": 0.0,
+    "gamma": 0.9,
+    "max_mem_size": 1000000,
+    "feature_size": 80,
+    "loss_beta": 0.5,
+    "reward_lamda": 0.5,
+    "extrins_reward_share":0.3
+
+  },
+  "emc": {
+    "slot_error_mode": 0,
+    "slot_error_prob": 0.05,
+    "intent_error_prob": 0
+  }
+}

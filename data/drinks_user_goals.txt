@@ -1,0 +1,142 @@
+{'request_slots': {'DRINK': 'UNK', 'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'cola'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'cola'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'cola', 'SIZE': 'small', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'cola'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'cola', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'cola'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'cola', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'cola'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'water'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'water', 'SIZE': 'small', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'water', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'water', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'water'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'sparkling water'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'sparkling water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'sparkling water', 'SIZE': 'small', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'sparkling water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'sparkling water', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'sparkling water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'sparkling water', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'sparkling water'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'medium water'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'medium water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'medium water', 'SIZE': 'small', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'medium water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'medium water', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'medium water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'medium water', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'medium water'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'still water'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'still water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'still water', 'SIZE': 'small', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'still water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'still water', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'still water'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'still water', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'still water'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'coffee'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'coffee'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'coffee', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'coffee'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'coffee', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'coffee'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot', 'DRINK': 'coffee'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'coffee', 'SIZE': 'medium', 'TEMP': 'hot'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'coffee'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'coffee', 'SIZE': 'large', 'TEMP': 'hot'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'coffee'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'tea'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'tea'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'tea', 'SIZE': 'small', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'tea'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot', 'DRINK': 'tea'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'tea', 'SIZE': 'small', 'TEMP': 'hot'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'tea'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'coffeevodka'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'coffeevodka'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'coffeevodka', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'coffeevodka'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'mojito'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'mojito'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'mojito', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'mojito'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'mojito', 'SIZE': 'Jumbo', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'Jumbo', 'DRINK': 'mojito'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'bahama mama'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'bahama mama'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'bahama mama', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'bahama mama'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'bahama mama', 'SIZE': 'Jumbo', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'Jumbo', 'DRINK': 'bahama mama'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'cuba libra'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'cuba libra'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'cuba libra', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'cuba libra'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'cuba libra', 'SIZE': 'Jumbo', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'Jumbo', 'DRINK': 'cuba libra'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'barracuda'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'barracuda'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'barracuda', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'barracuda'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'barracuda', 'SIZE': 'large', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'large', 'DRINK': 'barracuda'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'barracuda', 'SIZE': 'Jumbo', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'Jumbo', 'DRINK': 'barracuda'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'green tea'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'green tea'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'green tea', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'green tea'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot', 'DRINK': 'green tea'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'green tea', 'SIZE': 'medium', 'TEMP': 'hot'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'green tea'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'red vine'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'red vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'red vine', 'SIZE': 'small', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'red vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'red vine', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'red vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'red vine', 'SIZE': 'Jumbo', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'Jumbo', 'DRINK': 'red vine'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot', 'DRINK': 'red vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'red vine', 'SIZE': 'small', 'TEMP': 'hot'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'red vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'red vine', 'SIZE': 'medium', 'TEMP': 'hot'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'red vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'red vine', 'SIZE': 'Jumbo', 'TEMP': 'hot'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'Jumbo', 'DRINK': 'red vine'}}
+{'request_slots': {'SIZE': 'UNK', 'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'DRINK': 'white vine'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'cold', 'DRINK': 'white vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'white vine', 'SIZE': 'small', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'white vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'white vine', 'SIZE': 'medium', 'TEMP': 'cold'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'white vine'}}
+{'request_slots': {'SIZE': 'UNK', 'DRINK': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot'}}
+{'request_slots': {'SIZE': 'UNK'}, 'diaact': 'request', 'inform_slots': {'TEMP': 'hot', 'DRINK': 'white vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'white vine', 'SIZE': 'small', 'TEMP': 'hot'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'small', 'DRINK': 'white vine'}}
+{'request_slots': {}, 'diaact': 'request', 'inform_slots': {'DRINK': 'white vine', 'SIZE': 'medium', 'TEMP': 'hot'}}
+{'request_slots': {'TEMP': 'UNK'}, 'diaact': 'request', 'inform_slots': {'SIZE': 'medium', 'DRINK': 'white vine'}}

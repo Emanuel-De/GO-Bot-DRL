@@ -1,0 +1,43 @@
+0: {'DRINK': 'cola', 'SIZE': 'small', 'TEMP': 'cold'}
+1: {'DRINK': 'cola', 'SIZE': 'medium', 'TEMP': 'cold'}
+2: {'DRINK': 'cola', 'SIZE': 'large', 'TEMP': 'cold'}
+3: {'DRINK': 'water', 'SIZE': 'small', 'TEMP': 'cold'}
+4: {'DRINK': 'water', 'SIZE': 'medium', 'TEMP': 'cold'}
+5: {'DRINK': 'water', 'SIZE': 'large', 'TEMP': 'cold'}
+6: {'DRINK': 'sparkling water', 'SIZE': 'small', 'TEMP': 'cold'}
+7: {'DRINK': 'sparkling water', 'SIZE': 'medium', 'TEMP': 'cold'}
+8: {'DRINK': 'sparkling water', 'SIZE': 'large', 'TEMP': 'cold'}
+9: {'DRINK': 'medium water', 'SIZE': 'small', 'TEMP': 'cold'}
+10: {'DRINK': 'medium water', 'SIZE': 'medium', 'TEMP': 'cold'}
+11: {'DRINK': 'medium water', 'SIZE': 'large', 'TEMP': 'cold'}
+12: {'DRINK': 'still water', 'SIZE': 'small', 'TEMP': 'cold'}
+13: {'DRINK': 'still water', 'SIZE': 'medium', 'TEMP': 'cold'}
+14: {'DRINK': 'still water', 'SIZE': 'large', 'TEMP': 'cold'}
+15: {'DRINK': 'coffee', 'SIZE': 'medium', 'TEMP': 'cold'}
+16: {'DRINK': 'coffee', 'SIZE': 'large', 'TEMP': 'cold'}
+17: {'DRINK': 'coffee', 'SIZE': 'medium', 'TEMP': 'hot'}
+18: {'DRINK': 'coffee', 'SIZE': 'large', 'TEMP': 'hot'}
+19: {'DRINK': 'tea', 'SIZE': 'small', 'TEMP': 'cold'}
+20: {'DRINK': 'tea', 'SIZE': 'small', 'TEMP': 'hot'}
+21: {'DRINK': 'coffeevodka', 'SIZE': 'large', 'TEMP': 'cold'}
+22: {'DRINK': 'mojito', 'SIZE': 'medium', 'TEMP': 'cold'}
+23: {'DRINK': 'mojito', 'SIZE': 'Jumbo', 'TEMP': 'cold'}
+24: {'DRINK': 'bahama mama', 'SIZE': 'large', 'TEMP': 'cold'}
+25: {'DRINK': 'bahama mama', 'SIZE': 'Jumbo', 'TEMP': 'cold'}
+26: {'DRINK': 'cuba libra', 'SIZE': 'large', 'TEMP': 'cold'}
+27: {'DRINK': 'cuba libra', 'SIZE': 'Jumbo', 'TEMP': 'cold'}
+28: {'DRINK': 'barracuda', 'SIZE': 'medium', 'TEMP': 'cold'}
+29: {'DRINK': 'barracuda', 'SIZE': 'large', 'TEMP': 'cold'}
+30: {'DRINK': 'barracuda', 'SIZE': 'Jumbo', 'TEMP': 'cold'}
+31: {'DRINK': 'green tea', 'SIZE': 'medium', 'TEMP': 'cold'}
+32: {'DRINK': 'green tea', 'SIZE': 'medium', 'TEMP': 'hot'}
+33: {'DRINK': 'red vine', 'SIZE': 'small', 'TEMP': 'cold'}
+34: {'DRINK': 'red vine', 'SIZE': 'medium', 'TEMP': 'cold'}
+35: {'DRINK': 'red vine', 'SIZE': 'Jumbo', 'TEMP': 'cold'}
+36: {'DRINK': 'red vine', 'SIZE': 'small', 'TEMP': 'hot'}
+37: {'DRINK': 'red vine', 'SIZE': 'medium', 'TEMP': 'hot'}
+38: {'DRINK': 'red vine', 'SIZE': 'Jumbo', 'TEMP': 'hot'}
+39: {'DRINK': 'white vine', 'SIZE': 'small', 'TEMP': 'cold'}
+40: {'DRINK': 'white vine', 'SIZE': 'medium', 'TEMP': 'cold'}
+41: {'DRINK': 'white vine', 'SIZE': 'small', 'TEMP': 'hot'}
+42: {'DRINK': 'white vine', 'SIZE': 'medium', 'TEMP': 'hot'}

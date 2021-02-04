@@ -1,0 +1,16 @@
+{
+    'order_drinks': {'raw': 'Hi', 'inform': 'Can I have a drink. ', 'request': 'Which do you have?', 'inform placeholder': {'DRINK': 13, 'SIZE': 13, 'TEMP': 13}, 'request placeholder':{'DRINK': 6, 'SIZE': 6, 'TEMP': 6}}, 
+    'utter_request': {'request': 'Which do you like?', 'request placeholder':{'DRINK': 6, 'SIZE': 6, 'TEMP': 6}},
+    'request': {'inform': 'I would like to have a .', 'request': 'Which do you have?', 'inform placeholder': {'DRINK': 23, 'SIZE': 23, 'TEMP': 23}, 'request placeholder':{'DRINK': 6, 'SIZE': 6, 'TEMP': 6, 'drinknumber': 6}}, 
+    'utter_inform': {'inform': 'We have ', 'inform placeholder': {'DRINK': 9, 'SIZE': 9, 'TEMP':9}}, 
+    'inform': {'inform': 'I would like this to be ',  'inform placeholder': {'DRINK': 24, 'SIZE': 24, 'TEMP': 24}}, 
+    'find_drink': {'inform': 'We have the following drink: ',  'inform placeholder': {'DRINK': 29, 'SIZE': 29, 'TEMP':29, 'drinknumber': 29}},
+    'utter_goodbye': {'raw': 'bye bye'},
+    'reject': {'raw': 'No thats not what I wanted'},
+    'thanks': {'raw': 'Thanks. I will take this :)'},
+    'goodbye': {'raw': 'goodbye'},
+    'utter_nothing': {'raw': '...'},
+    'nothing': {'raw': '...'},
+    'trigger_user': {'request': 'Hey, sorry to disturb you. What can I offer to you?', 'request placeholder':{'DRINK': 32}},
+    'joke': {'raw': 'Helvetica and Times New Roman walk into a bar. Get out of here! shouts the bartender. We don’t serve your type.'}
+}

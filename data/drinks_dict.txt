@@ -1,0 +1,5 @@
+{'DRINK': ['cola', 'water', 'sparkling water', 'medium water', 'still water', 'coffee', 'tea', 'coffeevodka', 'mojito', 'bahama mama', 'cuba libra', 'barracuda', 'green tea', 'red vine', 'white vine' ],
+'SIZE': ['small', 'medium', 'large', 'Jumbo'],
+'Sizes': ['1110', '1110', '1110', '1110', '1110', '0110', '1000', '0010', '0101', '0011', '0011', '0111', '0100', '1101', '1100'],
+'TEMP': ['cold', 'hot'],
+'Temps': ['10', '10', '10', '10', '10', '11', '11', '10', '10', '10', '10', '10', '11', '11', '11']}

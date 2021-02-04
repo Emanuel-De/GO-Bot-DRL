@@ -1,21 +1,15 @@
-# Goal-Oriented Chatbot trained with Deep Reinforcement Learning
+# Intent Based BartenderAgent with DRL
 
-Based off of the code repo [TC-Bot](https://github.com/MiuLab/TC-Bot) and paper [End-to-End Task-Completion Neural Dialogue Systems](http://aclweb.org/anthology/I17-1074). This repo is a simplified version of TC-Bot, it performs at a similar level of accuracy, although it is not directly comparable.
-
+Based off of the code repo [TC-Bot](https://github.com/MiuLab/TC-Bot) and paper [End-to-End Task-Completion Neural Dialogue Systems](http://aclweb.org/anthology/I17-1074). The main difference is that will be used for a Bartender Environment currently currently covering the ordering of a specific drink at a specific size.
 ## Details
 
 This shows how to train a simple DQN agent with deep reinforcement learning as a goal-oriented chatbot using a simple user simulator. The code is a simplified version of TC-Bot by MiuLab with the main difference being that this code does not include NLG or NLU components but just trains the dialogue manager. NL components are not necessary to understand how a GO chatbot is trained with DRL and therefore are not implemented.
 
-Here is a diagram from the paper for TC-Bot, and is similar to the flow of dialogue used in this project other than the LU and NLG components:
-
-![Diagram](https://github.com/maxbren/GO-Bot_DRL/blob/master/assets/paper_diagram.PNG)
-
-In addition to removing NL, there are changes to the success conditions, the DQN agent optimizer and a few other minor changes. Therefore, accuracy should not be compared directly between TC-Bot and this repo. 
 
 The database is of movie tickets, the same DB used in TC-Bot. Both the pickle and text versions of the data can be seen in the [data directory](https://github.com/maxbren/GO-Bot-DRL/tree/master/data).
 
 ## Important Note
-A 5-part tutorial series that describes and goes through this code in detail can be found on medium [here](https://medium.com/@maxbrenner110/training-a-goal-oriented-chatbot-with-deep-reinforcement-learning-part-i-introduction-and-dce3af21d383)!
+A 5-part tutorial series that describes and goes through important concepts of  code in detail can be found on medium [here](https://medium.com/@maxbrenner110/training-a-goal-oriented-chatbot-with-deep-reinforcement-learning-part-i-introduction-and-dce3af21d383)!
 
 ## Dependencies
 - Python >= 3.5
@@ -43,10 +37,3 @@ Example action inputs:
 - done//
 
 In addition the console will ask for an indicator on whether the agent succeeded yet (other than after the initial action input of an episode). Allowed inputs are -1 for loss, 0 for no outcome yet, 1 for success. 
-
-## My Data
-Used hyperparameters from constants.json.
-
-Table of episodes (every 2000 out of 40000) by max success rate of a period/train frequency (every 100 episodes) up to that episode:
-
-![Data Table](https://github.com/maxbren/GO-Bot_DRL/blob/master/assets/data_table.PNG)

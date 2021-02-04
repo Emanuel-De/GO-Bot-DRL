@@ -34,12 +34,14 @@ class StateTracker:
     def get_state_size(self):
         """Returns the state size of the state representation used by the agent."""
 
-        return 2 * self.num_intents + 7 * self.num_slots + 3 + self.max_round_num
+        return 9 * self.num_intents + 8 * self.num_slots + 3 + self.max_round_num  # TODO add new  state size here
 
     def reset(self):
         """Resets current_informs, history and round_num."""
 
         self.current_informs = {}
+        self.current_user_informs = {}
+        self.current_agent_informs = {}
         # A list of the dialogues (dicts) by the agent and user so far in the conversation
         self.history = []
         self.round_num = 0
@@ -72,7 +74,14 @@ class StateTracker:
         user_action = self.history[-1]
         db_results_dict = self.db_helper.get_db_results_for_slots(self.current_informs)
         last_agent_action = self.history[-2] if len(self.history) > 1 else None
-
+        last_user_intent = self.history[-3]['intent'] if len(self.history) > 2 else None
+        last_2_agent_intent = self.history[-4]['intent'] if len(self.history) > 3 else None
+        last_2_user_intent = self.history[-5]['intent'] if len(self.history) > 4 else None
+        last_3_agent_intent = self.history[-6]['intent'] if len(self.history) > 5 else None
+        last_3_user_intent = self.history[-7]['intent'] if len(self.history) > 6 else None
+        last_4_agent_intent = self.history[-8]['intent'] if len(self.history) > 7 else None
+        last_4_user_intent = self.history[-9]['intent'] if len(self.history) > 8 else None
+        
         # Create one-hot of intents to represent the current user action
         user_act_rep = np.zeros((self.num_intents,))
         user_act_rep[self.intents_dict[user_action['intent']]] = 1.0
@@ -87,15 +96,49 @@ class StateTracker:
         for key in user_action['request_slots'].keys():
             user_request_slots_rep[self.slots_dict[key]] = 1.0
 
-        # Create bag of filled_in slots based on the current_slots
-        current_slots_rep = np.zeros((self.num_slots,))
-        for key in self.current_informs:
-            current_slots_rep[self.slots_dict[key]] = 1.0
+        # Create bage for the history
+        last_user_act_rep = np.zeros((self.num_intents,))
+        if last_user_intent:
+            last_user_act_rep[self.intents_dict[last_user_intent]] = 1.0
+        
+        last_2_user_act_rep = np.zeros((self.num_intents,))
+        if last_2_user_intent:
+            last_2_user_act_rep[self.intents_dict[last_2_user_intent]] = 1.0
+
+        last_3_user_act_rep = np.zeros((self.num_intents,))
+        if last_3_user_intent:
+            last_3_user_act_rep[self.intents_dict[last_3_user_intent]] = 1.0
+
+        last_4_user_act_rep = np.zeros((self.num_intents,))
+        if last_4_user_intent:
+            last_4_user_act_rep[self.intents_dict[last_4_user_intent]] = 1.0
+
+        last_2_agent_act_rep = np.zeros((self.num_intents,))
+        if last_2_agent_intent:
+            last_2_agent_act_rep[self.intents_dict[last_2_agent_intent]] = 1.0
+
+        last_3_agent_act_rep = np.zeros((self.num_intents,))
+        if last_3_agent_intent:
+            last_3_agent_act_rep[self.intents_dict[last_3_agent_intent]] = 1.0
+
+        last_4_agent_act_rep = np.zeros((self.num_intents,))
+        if last_4_agent_intent:
+            last_4_agent_act_rep[self.intents_dict[last_4_agent_intent]] = 1.0
+
+        # Create bag of filled_in slots based on the current_agents_slots
+        current_agent_slots_rep = np.zeros((self.num_slots,))
+        for key in self.current_agent_informs:
+            current_agent_slots_rep[self.slots_dict[key]] = 1.0
+
+        # Create bag of filled_in slots based on the current_user_slots
+        current_user_slots_rep = np.zeros((self.num_slots,))
+        for key in self.current_user_informs:
+            current_user_slots_rep[self.slots_dict[key]] = 1.0
 
         # Encode last agent intent
-        agent_act_rep = np.zeros((self.num_intents,))
+        last_agent_act_rep = np.zeros((self.num_intents,))
         if last_agent_action:
-            agent_act_rep[self.intents_dict[last_agent_action['intent']]] = 1.0
+            last_agent_act_rep[self.intents_dict[last_agent_action['intent']]] = 1.0
 
         # Encode last agent inform slots
         agent_inform_slots_rep = np.zeros((self.num_slots,))
@@ -129,8 +172,10 @@ class StateTracker:
                 kb_binary_rep[self.slots_dict[key]] = np.sum(db_results_dict[key] > 0.)
 
         state_representation = np.hstack(
-            [user_act_rep, user_inform_slots_rep, user_request_slots_rep, agent_act_rep, agent_inform_slots_rep,
-             agent_request_slots_rep, current_slots_rep, turn_rep, turn_onehot_rep, kb_binary_rep,
+            [user_act_rep, user_inform_slots_rep, user_request_slots_rep, last_agent_act_rep, last_user_act_rep,
+             last_2_agent_act_rep, last_2_user_act_rep, last_3_agent_act_rep, last_3_user_act_rep,  
+             last_4_agent_act_rep, last_4_user_act_rep, agent_inform_slots_rep, agent_request_slots_rep,
+             current_user_slots_rep, current_agent_slots_rep, turn_rep, turn_onehot_rep, kb_binary_rep,
              kb_count_rep]).flatten()
 
         return state_representation
@@ -149,17 +194,18 @@ class StateTracker:
 
         """
 
-        if agent_action['intent'] == 'inform':
+        if agent_action['intent'] == 'utter_inform':
             assert agent_action['inform_slots']
             inform_slots = self.db_helper.fill_inform_slot(agent_action['inform_slots'], self.current_informs)
             agent_action['inform_slots'] = inform_slots
             assert agent_action['inform_slots']
-            key, value = list(agent_action['inform_slots'].items())[0]  # Only one
+            key, value = list(agent_action['inform_slots'].items())[0]  # Only one 
+            # TODO Check which item is informed 
             assert key != 'match_found'
             assert value != 'PLACEHOLDER', 'KEY: {}'.format(key)
-            self.current_informs[key] = value
+            self.current_agent_informs[key] = value
         # If intent is match_found then fill the action informs with the matches informs (if there is a match)
-        elif agent_action['intent'] == 'match_found':
+        elif agent_action['intent'] == 'find_drink':
             assert not agent_action['inform_slots'], 'Cannot inform and have intent of match found!'
             db_results = self.db_helper.get_db_results(self.current_informs)
             if db_results:
@@ -169,10 +215,11 @@ class StateTracker:
                 agent_action['inform_slots'][self.match_key] = str(key)
             else:
                 agent_action['inform_slots'][self.match_key] = 'no match available'
-            self.current_informs[self.match_key] = agent_action['inform_slots'][self.match_key]
+            self.current_agent_informs = agent_action['inform_slots']
         agent_action.update({'round': self.round_num, 'speaker': 'Agent'})
         self.history.append(agent_action)
-
+        self.current_informs = {**self.current_informs, **self.current_agent_informs}
+        
     def update_state_user(self, user_action):
         """
         Updates the dialogue history with the user's action and augments the user's action.
@@ -185,9 +232,13 @@ class StateTracker:
                                  'request_slots': {}, 'round': int, 'speaker': 'User')
 
         """
+        if user_action['intent'] == 'reject':
+            self.current_agent_informs = {}
+            self.current_informs = self.current_user_informs
 
         for key, value in user_action['inform_slots'].items():
-            self.current_informs[key] = value
+            self.current_user_informs[key] = value
         user_action.update({'round': self.round_num, 'speaker': 'User'})
         self.history.append(user_action)
         self.round_num += 1
+        self.current_informs = {**self.current_informs, **self.current_user_informs}
